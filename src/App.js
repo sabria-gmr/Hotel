@@ -6,6 +6,7 @@ import Chambre from './components/Chambre'
 import Avis from './components/Avis'
 import Footer from './components/Footer'
 import Hero from './components/Hero'
+import PortfolioHotel from './Pages/PortfolioHotel'
 
 
 
@@ -14,17 +15,9 @@ function App() {
   return (
     <Router>
       <div className='bg-white dark:bg-black'>
-        <div className='sticky top-0 z-50'>
-          <Navbar/>
-          
-          <Hero/>
-          <Cards/>
-          <Chambre/>
-          <Avis/>
-          <Footer/>
-        </div>
-      
-      </div></Router>
+        <PortfolioHotel/>
+      </div>
+      </Router>
 
 
 
