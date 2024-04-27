@@ -1,4 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
+import { initializeApp } from "firebase/app";
+import { getFirestore,addDoc, collection} from "firebase/firestore";
+const firebaseConfig = {
+  apiKey: "AIzaSyCwNJksuNN3-W79mPKdrQZ1OfVRQA4vm6o",
+  authDomain: "hackathon-8d1d8.firebaseapp.com",
+  databaseURL: "https://hackathon-8d1d8-default-rtdb.firebaseio.com",
+  projectId: "hackathon-8d1d8",
+  storageBucket: "hackathon-8d1d8.appspot.com",
+  messagingSenderId: "12011905017",
+  appId: "1:12011905017:web:929f273e446f333d8b2728",
+  measurementId: "G-Q4RV1881K4"
+};
+const fireBaseApp = initializeApp(firebaseConfig);
+const db =getFirestore(fireBaseApp) ;
+const colRef = collection(db,'Reservation')
+addReservation.addEventListener('submit',(e)=>{
+  e.preventDefault()
+  addDoc(colRef,{
+    Nom :lastName.value,
+    prenom : firstName.value,
+    email : email.value ,
+    telephone : phoneNumber.value,
+    date_reservation : selectedDate
+  })
+  })
 
 function ReservationForm() {
   const [firstName, setFirstName] = useState('');
@@ -14,7 +39,7 @@ function ReservationForm() {
   const [hasVehicle, setHasVehicle] = useState(false);
   const [carRegistration, setCarRegistration] = useState('');
   const [showPopup, setShowPopup] = useState(false); // State for controlling popup visibility
-
+  
   // Fonction de calcul du prix
   useEffect(() => {
     // Logique de calcul du prix en fonction du type de chambre et du nombre de personnes
@@ -28,14 +53,7 @@ function ReservationForm() {
     }
     setPrice(calculatedPrice);
   }, [roomType, numberOfPeople]);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Logique de gestion de la soumission du formulaire
-    // Here you can handle form submission logic, like sending data to the server
-    // After submission, you can show the popup
-    setShowPopup(true);
-  };
+  
   return (
     
 <div>
@@ -120,7 +138,7 @@ function ReservationForm() {
      
     )}
      </div>
-  );
-}
+  );}
+
 
 export default ReservationForm;
