@@ -10,7 +10,7 @@ import img8 from '../assets/Frame 1429.png';
 
 function Cards() {
   return (
-    <div className='bg-white m-60 grid gap-4 grid-cols-4 items-center justify-center rounded-xl'>
+    <div className='bg-white m-6 grid gap-4 grid-cols-4 items-center justify-center rounded-xl'>
       <div className="col-span-4 flex flex-col items-center justify-center">
         <h1 className="text-3xl font-bold tracking-wider py-8  text-center">Nos équipements</h1>
         <p className="text-center pb-4">Nous proposons des installations modernes dignes d'un hôtel 5 étoiles pour votre confort.</p>

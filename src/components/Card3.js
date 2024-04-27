@@ -12,8 +12,8 @@ function Card() {
                 <img className=' object-cover rounded-xl md:w-32 lg:w-80' src={ch1} width={70} alt='pc' />
                 {/* <p className='-mt-36 rounded-lg border border-white'>Developpement</p> */}
                 <div className='p-2 mt-2'>
-                    <h2 className='font-bold tracking-wider dark:text-white  '> Chambre Double </h2>
-                    <p className='text-gray-500 text-xs mt-1  dark:text-gray-1  dark:text-neutral-400'> Cette chambre offre une vue sur la mer, un lit double trés confortable, des draps 100% coton, une télévision à écran plat, un bureau, une salle de bains avec pomme de douche à effet pluie et produits de bain et un coffre-fort. </p>
+                    <h2 className='font-bold tracking-wider dark:text-white  '> Suite Privilege </h2>
+                    <p className='text-gray-500 text-xs mt-1  dark:text-gray-1  dark:text-neutral-400'> Idéalement adaptés pour des vacances en famille, ou pour une inoubliable nuit de noce, ou un séjour prolongé. Idéalement adaptés pour des vacances en famille, ou pour une inoubliable nuit de noce, ou un séjour prolongé.  </p>
 
                     
                 </div>

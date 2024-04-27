@@ -5,16 +5,15 @@ function ReservationForm() {
   const [lastName, setLastName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [email, setEmail] = useState('');
-  const [vehicleRegistration, setVehicleRegistration] = useState('');
   const [checkInDate, setCheckInDate] = useState('');
   const [checkOutDate, setCheckOutDate] = useState('');
   const [roomType, setRoomType] = useState('');
   const [numberOfPeople, setNumberOfPeople] = useState('');
-  const [paymentMethod, setPaymentMethod] = useState('');
   const [price, setPrice] = useState(0);
   const [nationalId, setNationalId] = useState('');
   const [hasVehicle, setHasVehicle] = useState(false);
   const [carRegistration, setCarRegistration] = useState('');
+  const [showPopup, setShowPopup] = useState(false); // State for controlling popup visibility
 
   // Fonction de calcul du prix
   useEffect(() => {
@@ -33,11 +32,13 @@ function ReservationForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Logique de gestion de la soumission du formulaire
+    // Here you can handle form submission logic, like sending data to the server
+    // After submission, you can show the popup
+    setShowPopup(true);
   };
-
   return (
     
-
+<div>
     <form onSubmit={handleSubmit} className="mx-auto mt-8 p-6 bg-beige_light   rounded-lg shadow-md" style={{ maxWidth: '840px' }}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
         <div>
@@ -107,6 +108,18 @@ function ReservationForm() {
       </div>
       <button type="submit" className="w-24 bg-blue text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue focus:ring-opacity-50">Réserver</button>
     </form>
+    {/* Popup */}
+    {showPopup && (
+      <div className="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 flex justify-center items-center">
+        <div className="bg-white rounded-lg p-6">
+          <h2 className="text-xl font-semibold mb-4">Réservation réussie !</h2>
+          <p>Votre réservation a été soumise avec succès.</p>
+          <button onClick={() => setShowPopup(false)} className="mt-4 bg-blue text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue focus:ring-opacity-50">Fermer</button>
+        </div>
+      </div>
+     
+    )}
+     </div>
   );
 }
 
